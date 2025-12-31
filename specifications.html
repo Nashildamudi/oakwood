@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities & Specs | Oakwood Residency</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-oakwood-text bg-white antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="font-serif text-2xl font-semibold tracking-tight text-oakwood-dark">
+                    Oakwood <span class="text-oakwood-accent">Residency</span>
+                </a>
+
+                <div class="hidden md:flex space-x-12 items-center">
+                    <a href="index.html"
+                        class="text-sm uppercase tracking-widest font-medium text-gray-500 hover:text-oakwood-dark transition">Home</a>
+                    <a href="overview.html"
+                        class="text-sm uppercase tracking-widest font-medium text-gray-500 hover:text-oakwood-dark transition">Overview</a>
+                    <a href="specifications.html"
+                        class="text-sm uppercase tracking-widest font-medium text-oakwood-accent">Amenities</a>
+                    <a href="floor-plans.html"
+                        class="text-sm uppercase tracking-widest font-medium text-gray-500 hover:text-oakwood-dark transition">Floor
+                        Plans</a>
+                    <a href="floor-plans.html#contact"
+                        class="px-6 py-2 bg-oakwood-dark text-white text-sm uppercase tracking-widest hover:bg-gray-800 transition">Contact</a>
+                </div>
+
+                <button class="md:hidden text-gray-800"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-6 absolute w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 font-medium">Home</a>
+                <a href="overview.html" class="text-gray-600 font-medium">Overview</a>
+                <a href="specifications.html" class="text-oakwood-accent font-medium">Amenities</a>
+                <a href="floor-plans.html" class="text-gray-600 font-medium">Floor Plans & Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="bg-oakwood-bg pt-40 pb-20 px-6 text-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-oakwood-accent mb-4 block">Details</span>
+        <h1 class="font-serif text-4xl md:text-5xl text-oakwood-dark">Amenities & Specifications</h1>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col lg:flex-row gap-20">
+
+        <!-- AMENITIES (Left Column) -->
+        <div class="lg:w-1/3 space-y-12">
+            <div>
+                <h2 class="font-serif text-2xl text-oakwood-dark mb-8 pb-4 border-b border-gray-200">Highlights</h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <i data-lucide="arrow-up-down" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Two automatic elevators</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="zap" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Generator for common/apartment lighting with sound proof
+                            enclosure</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="dumbbell" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Gymnasium</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="phone-call" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Centrex facility (Intercom) connection</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="smile" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Children play area with landscaped garden</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="tv" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Provision for cable TV connection</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="car" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Car parking (at extra cost)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="font-serif text-2xl text-oakwood-dark mb-8 pb-4 border-b border-gray-200">Common Areas</h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <i data-lucide="layers" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Marble / Tiles / Granite flooring for common areas</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="shield" class="w-6 h-6 text-oakwood-accent mr-4 mt-1"></i>
+                        <span class="text-gray-700">Security room and common toilet</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SPECIFICATIONS (Right Column) -->
+        <div class="lg:w-2/3">
+            <h2 class="font-serif text-2xl text-oakwood-dark mb-8 pb-4 border-b border-gray-200">Technical
+                Specifications</h2>
+
+            <!-- Accordion Wrapper -->
+            <div class="space-y-4">
+
+                <details class="group bg-gray-50 rounded-lg" open>
+                    <summary
+                        class="flex justify-between items-center p-6 cursor-pointer font-medium text-oakwood-dark hover:bg-gray-100 transition">
+                        Structure & Exterior
+                        <i data-lucide="plus" class="w-4 h-4 text-gray-400 group-open:hidden"></i>
+                        <i data-lucide="minus" class="w-4 h-4 text-gray-400 hidden group-open:block"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 space-y-2">
+                        <p>&bull; Fully framed RCC structure with car parking facility</p>
+                        <p>&bull; Double coat exterior plastering</p>
+                        <p>&bull; Exterior Apex paints</p>
+                        <p>&bull; Compound wall and gate</p>
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 rounded-lg">
+                    <summary
+                        class="flex justify-between items-center p-6 cursor-pointer font-medium text-oakwood-dark hover:bg-gray-100 transition">
+                        Flooring & Kitchen
+                        <i data-lucide="plus" class="w-4 h-4 text-gray-400 group-open:hidden"></i>
+                        <i data-lucide="minus" class="w-4 h-4 text-gray-400 hidden group-open:block"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 space-y-2">
+                        <p>&bull; Superior vitrified floor tiles for internal spaces</p>
+                        <p>&bull; Granite platform with stainless steel sink in Kitchen</p>
+                        <p>&bull; Designed glazed tiles for toilets (full height) and kitchen (24” above platform)</p>
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 rounded-lg">
+                    <summary
+                        class="flex justify-between items-center p-6 cursor-pointer font-medium text-oakwood-dark hover:bg-gray-100 transition">
+                        Doors & Windows
+                        <i data-lucide="plus" class="w-4 h-4 text-gray-400 group-open:hidden"></i>
+                        <i data-lucide="minus" class="w-4 h-4 text-gray-400 hidden group-open:block"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 space-y-2">
+                        <p>&bull; Aluminum windows with steel grills</p>
+                        <p>&bull; Wooden door frames with decorative flush doors</p>
+                        <p>&bull; Fibrotech shutters for toilets</p>
+                        <p>&bull; Metal putty finish enamel paint for doors/shutters</p>
+                        <p>&bull; Superior designer locks for all inside doors</p>
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 rounded-lg">
+                    <summary
+                        class="flex justify-between items-center p-6 cursor-pointer font-medium text-oakwood-dark hover:bg-gray-100 transition">
+                        Plumbing & Electrical
+                        <i data-lucide="plus" class="w-4 h-4 text-gray-400 group-open:hidden"></i>
+                        <i data-lucide="minus" class="w-4 h-4 text-gray-400 hidden group-open:block"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 space-y-2">
+                        <p>&bull; CP fittings: Jaguar / Hindware / A.R.K.</p>
+                        <p>&bull; Sanitary ware: Hindware / Parryware</p>
+                        <p>&bull; Hot and cold water mixer unit for all bathrooms</p>
+                        <div class="border-t border-gray-200 pt-2 mt-2"></div>
+                        <p>&bull; Modular electrical switches: Legrand / Havells</p>
+                        <p>&bull; Wiring: RR Kabel / V-Guard / Havells / Finolex</p>
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 rounded-lg">
+                    <summary
+                        class="flex justify-between items-center p-6 cursor-pointer font-medium text-oakwood-dark hover:bg-gray-100 transition">
+                        Water & Drainage
+                        <i data-lucide="plus" class="w-4 h-4 text-gray-400 group-open:hidden"></i>
+                        <i data-lucide="minus" class="w-4 h-4 text-gray-400 hidden group-open:block"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 space-y-2">
+                        <p>&bull; Water supply from open well / borewell + corporation water</p>
+                        <p>&bull; Overhead water tank and underground sump tank</p>
+                        <p>&bull; Pressure-checked plumbing and drainage lines</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+        class="bg-gray-900 border-t border-gray-800 text-gray-500 py-12 text-center text-xs tracking-wider uppercase">
+        <p>&copy; 2025 Oakwood Residency. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
