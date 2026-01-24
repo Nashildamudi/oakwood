@@ -10,6 +10,9 @@
         rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        window.location.replace('index.html#overview');
+    </script>
     <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
@@ -45,13 +48,45 @@
                 <a href="specifications.html"
                     class="text-xs uppercase tracking-widest font-medium text-gray-500 hover:text-oakwood-dark transition">Amenities</a>
                 <a href="floor-plans.html"
+                    class="text-xs uppercase tracking-widest font-medium text-gray-500 hover:text-oakwood-dark transition">Floor Plans</a>
+                <a href="floor-plans.html#contact"
                     class="px-5 py-2 border border-gray-200 text-gray-600 text-xs uppercase tracking-widest hover:border-oakwood-dark hover:text-oakwood-dark transition">Contact</a>
+            </div>
+
+            <button class="md:hidden text-gray-800"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-6 absolute w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 font-medium">Home</a>
+                <a href="overview.html" class="text-oakwood-accent font-medium">Overview</a>
+                <a href="specifications.html" class="text-gray-600 font-medium">Amenities</a>
+                <a href="floor-plans.html" class="text-gray-600 font-medium">Floor Plans</a>
+                <a href="floor-plans.html#contact" class="text-gray-600 font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- HEADER -->
     <header class="pt-40 pb-20 px-6 text-center bg-gradient-subtle">
+       <div class="absolute inset-0 z-0 overflow-hidden">
+    <!-- Background Image -->
+    <img 
+        src="./assets/floor 4.jpg" 
+        alt="Oakwood Residency"
+        class="w-full h-full object-cover scale-110 blur-md"
+    >
+
+    <!-- White Blur Overlay -->
+    <div class="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
+
+    <!-- Bottom fade (optional, clean look) -->
+    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent"></div>
+</div>
+
         <div class="reveal">
             <span class="text-xs font-bold uppercase tracking-[0.3em] text-oakwood-accent mb-6 block">Our Vision</span>
             <h1 class="font-serif text-5xl md:text-7xl text-oakwood-dark mb-8">The Philosophy</h1>
@@ -81,6 +116,7 @@
                 </div>
             </div>
         </div>
+        
 
         <!-- Section 2 (Reverse) -->
         <div class="flex flex-col md:flex-row-reverse gap-20 items-center">
