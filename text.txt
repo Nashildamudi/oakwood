@@ -14,3 +14,11 @@
                                 class="w-4 h-4 mr-2 text-oakwood-accent"></i> Separate living/dining areas</li>
                     </ul>
                 </div>
+
+
+
+                 <div>
+                            <h3 class="font-serif text-lg mb-1">Site Location</h3>
+                            <p class="text-gray-400 font-light">Mangalore</p>
+                            <p class="text-gray-500 text-sm mt-2">Strategically located in the hub of the city.</p>
+                        </div> i want add one site location map image can add image code
