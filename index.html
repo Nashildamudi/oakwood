@@ -48,6 +48,75 @@
                 nav.classList.add('bg-transparent');
             }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tagsContainer = document.querySelector('.area-tags');
+            const modalEl = document.getElementById('flat-modal');
+            const modalImageEl = document.getElementById('flat-modal-image');
+            const modalTitleEl = document.getElementById('flat-modal-title');
+
+            if (!tagsContainer || !modalEl || !modalImageEl || !modalTitleEl) return;
+
+            const tags = Array.from(tagsContainer.querySelectorAll('.tag'));
+
+            const closeModal = () => {
+                modalEl.classList.remove('is-open');
+                modalEl.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+
+            const openModal = (tagEl) => {
+                const imgSrc = tagEl.getAttribute('data-image');
+                if (!imgSrc) return;
+
+                modalImageEl.src = imgSrc;
+                modalImageEl.alt = 'Flat Plan';
+                modalTitleEl.textContent = tagEl.textContent.trim();
+                modalEl.classList.add('is-open');
+                modalEl.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const setActiveTag = (tagEl) => {
+                tags.forEach(t => {
+                    t.classList.remove('is-active');
+                    t.setAttribute('aria-pressed', 'false');
+                });
+
+                if (!tagEl) return;
+
+                tagEl.classList.add('is-active');
+                tagEl.setAttribute('aria-pressed', 'true');
+            };
+
+            modalEl.querySelectorAll('[data-close="true"]').forEach((el) => {
+                el.addEventListener('click', closeModal);
+            });
+
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalEl.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+
+            tags.forEach((tag) => {
+                tag.setAttribute('role', 'button');
+                tag.setAttribute('tabindex', '0');
+                tag.setAttribute('aria-pressed', 'false');
+
+                tag.addEventListener('click', () => {
+                    setActiveTag(tag);
+                    openModal(tag);
+                });
+                tag.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setActiveTag(tag);
+                        openModal(tag);
+                    }
+                });
+            });
+        });
     </script>
 </head>
 
@@ -451,18 +520,18 @@
                 <div class="md:w-1/3">
                     <h2 class="font-serif text-3xl text-oakwood-dark mb-10">Area Statement</h2>
                     <div class="area-tags">
-                        <div class="tag">Flat No. 1  (1 BED)<span>490 SFT</span></div>
-                        <div class="tag">Flat No. 2  (1 BED)<span>475 SFT</span></div>
-                        <div class="tag">Flat No. 3  (1 BED)<span>490 SFT</span></div>
-                        <div class="tag">Flat No. 4  (2 BED)<span>880 SFT</span></div>
-                        <div class="tag">Flat No. 5  (2 BED)<span>880 SFT</span></div>
-                        <div class="tag">Flat No. 6  (2 BED)<span>880 SFT</span></div>
-                        <div class="tag">Flat No. 7  (2 BED)<span>880 SFT</span></div>
-                        <div class="tag">Flat No. 8  (2 BED)<span>610 SFT</span></div>
-                        <div class="tag">Flat No. 9  (3 BED)<span>1160 SFT</span></div>
-                        <div class="tag">Flat No. 10 (2 BED)<span>880 SFT</span></div>
-                        <div class="tag">Flat No. 11 (2 BED)<span>880 SFT</span></div>
-                        <div class="tag">Flat No. 12 (3 BED)<span>1220 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-1.png">Flat No. 1  (1 BED)<small class="tag-cta">View</small><span>490 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-2.png">Flat No. 2  (1 BED)<small class="tag-cta">View</small><span>475 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-3.png">Flat No. 3  (1 BED)<small class="tag-cta">View</small><span>490 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-4.png">Flat No. 4  (2 BED)<small class="tag-cta">View</small><span>880 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-5.png">Flat No. 5  (2 BED)<small class="tag-cta">View</small><span>880 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-6.png">Flat No. 6  (2 BED)<small class="tag-cta">View</small><span>880 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-7.png">Flat No. 7  (2 BED)<small class="tag-cta">View</small><span>880 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-8.png">Flat No. 8  (2 BED)<small class="tag-cta">View</small><span>610 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat9.jpeg">Flat No. 9  (3 BED)<small class="tag-cta">View</small><span>1160 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-10.png">Flat No. 10 (2 BED)<small class="tag-cta">View</small><span>880 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-11.png">Flat No. 11 (2 BED)<small class="tag-cta">View</small><span>880 SFT</span></div>
+                        <div class="tag" data-image="./assets/flat-12.png">Flat No. 12 (3 BED)<small class="tag-cta">View</small><span>1220 SFT</span></div>
                     </div>
 
                     <div class="residences-block">
@@ -487,7 +556,7 @@
                     </div>
                 </div>
                 <div class="md:w-2/3 bg-white p-8 border border-gray-100 shadow-sm cursor-zoom-in group relative overflow-hidden">
-                    <img src="./assets/residenet.png" alt="Residential Floor Plan" class="w-full h-auto transform transition duration-500 group-hover:scale-105">
+                    <img id="area-preview-image" data-default-src="./assets/residential-plan.png" src="./assets/residential-plan.png" alt="Residential Floor Plan" class="w-full h-auto transform transition duration-500 group-hover:scale-105">
                 </div>
             </div>
 
@@ -610,6 +679,19 @@
             </div>
         </div>
     </footer>
+
+    <div id="flat-modal" class="flat-modal" aria-hidden="true">
+        <div class="flat-modal__backdrop" data-close="true"></div>
+        <div class="flat-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="flat-modal-title">
+            <button type="button" class="flat-modal__close" aria-label="Close" data-close="true">&times;</button>
+            <div class="flat-modal__content">
+                <img id="flat-modal-image" class="flat-modal__image" src="" alt="">
+                <div class="flat-modal__side">
+                    <h3 id="flat-modal-title" class="flat-modal__title"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         lucide.createIcons();
